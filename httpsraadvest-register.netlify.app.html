@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثبت‌نام دوره آموزشی — راد وست</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07090f;--card:#0f1325;--card2:#141a30;
+  --border:#1a2540;--border2:#202e50;
+  --accent:#2563eb;--accent2:#3b82f6;--accent3:#60a5fa;
+  --gold:#f59e0b;--gold2:#fbbf24;
+  --green:#10b981;--green2:#34d399;
+  --red:#ef4444;--text:#f1f5f9;--sub:#94a3b8;--dim:#475569;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Vazirmatn",sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#040609 0%,#090e24 50%,#050815 100%);padding:70px 24px 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -5%,rgba(37,99,235,.28) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(245,158,11,.08) 0%,transparent 50%)}
+.hero-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:20px;margin-bottom:22px}
+.hero h1{font-size:clamp(28px,5vw,50px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fff 0%,#93c5fd 60%,#818cf8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;line-height:1.2}
+.hero p{font-size:16px;color:var(--sub);max-width:500px;margin:0 auto 28px}
+.hero-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--sub);font-size:12px;padding:5px 14px;border-radius:20px}
+
+/* LAYOUT */
+.wrap{max-width:840px;margin:0 auto;padding:48px 20px 80px}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-bottom:48px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;align-items:center;gap:10px}
+.feat-icon{font-size:18px;flex-shrink:0}
+.feat-text{font-size:13px;font-weight:600}
+
+/* SEC HEAD */
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.sec-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.sec-head h2{font-size:20px;font-weight:800}
+.sec-head p{font-size:13px;color:var(--sub);margin-top:3px}
+
+/* FORM CARD */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:36px 32px;margin-bottom:50px;position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent) 0%,var(--green) 100%);border-radius:0 18px 18px 0}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--sub);margin-bottom:8px}
+.req{color:var(--accent3);margin-right:4px}
+.opt{font-size:11px;font-weight:500;color:var(--dim);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:1px 7px;border-radius:10px;margin-right:8px}
+.field input[type=text],.field input[type=tel],.field input[type=email]{width:100%;background:var(--card2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:"Vazirmatn",sans-serif;font-size:14px;padding:13px 16px;outline:none;transition:border-color .2s,box-shadow .2s;direction:rtl}
+.field input:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(59,130,246,.12)}
+.field input::placeholder{color:var(--dim)}
+.field input.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+
+/* Level */
+.level-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px}
+.level-opt{position:relative;cursor:pointer}
+.level-opt input{position:absolute;opacity:0;width:0;height:0}
+.level-box{display:flex;flex-direction:column;align-items:center;gap:6px;border:2px solid var(--border2);border-radius:12px;padding:16px 10px;background:var(--card2);transition:all .2s;text-align:center}
+.level-opt input:checked ~ .level-box{border-color:var(--accent2);background:rgba(37,99,235,.1)}
+.lv-icon{font-size:22px}.lv-name{font-size:13px;font-weight:700}.lv-desc{font-size:11px;color:var(--sub)}
+
+/* Toast */
+.toast{display:none;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;text-align:center}
+.toast.err-t{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+
+/* Submit */
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--accent) 0%,#1d4ed8 100%);color:#fff;border:none;border-radius:12px;font-family:"Vazirmatn",sans-serif;font-size:16px;font-weight:700;padding:16px;cursor:pointer;margin-top:28px;transition:transform .15s,box-shadow .15s,opacity .15s;box-shadow:0 4px 20px rgba(37,99,235,.35);letter-spacing:.3px}
+.submit-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,.45)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-left:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Success */
+.success-msg{display:none;text-align:center;padding:44px 20px}
+.success-msg .s-icon{font-size:56px;margin-bottom:18px}
+.success-msg h3{font-size:22px;font-weight:800;color:var(--green2);margin-bottom:10px}
+.success-msg p{font-size:14px;color:var(--sub);line-height:1.8}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:14px;font-weight:700;transition:background .15s;gap:12px;user-select:none}
+.faq-q:hover{background:var(--card2)}
+.faq-icon{width:26px;height:26px;border-radius:7px;background:rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;color:var(--accent3);font-size:16px;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(59,130,246,.25)}
+.faq-a{display:none;padding:0 22px 18px;font-size:13.5px;color:var(--sub);line-height:1.85;border-top:1px solid var(--border)}
+.faq-item.open .faq-a{display:block}
+.faq-a ul{list-style:none;margin-top:10px}
+.faq-a ul li{padding:5px 0}
+.faq-a strong{color:var(--text)}
+.tag{display:inline-block;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:var(--green2);font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-top:8px;margin-left:4px}
+.tag-gold{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.3);color:var(--gold2)}
+.divider{border:none;border-top:1px solid var(--border);margin:44px 0}
+footer{text-align:center;padding:36px 24px;border-top:1px solid var(--border);color:var(--dim);font-size:13px}
+footer strong{color:var(--accent3)}
+@media(max-width:560px){.form-card{padding:24px 18px}.level-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">📚 RAADVEST ACADEMY — آکادمی راد وست</div>
+    <h1>دوره جامع آموزش<br>بازارهای مالی</h1>
+    <p>از صفر تا ساخت استراتژی شخصی — فارکس و ارز دیجیتال</p>
+    <div class="hero-pills">
+      <span class="pill">📍 پارک علم و فناوری بندرعباس</span>
+      <span class="pill">⏱️ ۵۰ ساعت حضوری</span>
+      <span class="pill">💰 ۳۰ میلیون تومان</span>
+      <span class="pill">✅ پشتیبانی دائمی</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">✔️</div><div class="feat-text">آموزش کاملاً حضوری</div></div>
+    <div class="feat"><div class="feat-icon">👥</div><div class="feat-text">کلاس‌های محدود</div></div>
+    <div class="feat"><div class="feat-icon">🎓</div><div class="feat-text">ارتباط مستقیم با مدرس</div></div>
+    <div class="feat"><div class="feat-icon">🔁</div><div class="feat-text">پشتیبانی دائمی</div></div>
+    <div class="feat"><div class="feat-icon">📄</div><div class="feat-text">جزوه اختصاصی</div></div>
+    <div class="feat"><div class="feat-icon">📊</div><div class="feat-text">مثال‌های واقعی بازار</div></div>
+    <div class="feat"><div class="feat-icon">🛠️</div><div class="feat-text">تمرین عملی</div></div>
+    <div class="feat"><div class="feat-icon">🚀</div><div class="feat-text">صفر تا پیشرفته</div></div>
+  </div>
+
+  <!-- FORM -->
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(37,99,235,.15)">🎯</div>
+    <div><h2>فرم ثبت‌نام</h2><p>اطلاعات خود را وارد کنید تا با شما تماس بگیریم</p></div>
+  </div>
+
+  <div class="form-card">
+    <form id="regForm" onsubmit="submitForm(event)" novalidate>
+      <div class="field">
+        <label><span class="req">*</span> نام و نام خانوادگی</label>
+        <input type="text" id="fullname" placeholder="مثال: علی احمدی">
+      </div>
+      <div class="field">
+        <label><span class="req">*</span> شماره تماس</label>
+        <input type="tel" id="phone" placeholder="09xxxxxxxxx">
+      </div>
+      <div class="field">
+        <label>ایمیل <span class="opt">اختیاری</span></label>
+        <input type="email" id="email" placeholder="example@email.com">
+      </div>
+      <div class="field">
+        <label><span class="req">*</span> سطح آشنایی شما با بازارهای مالی</label>
+        <div class="level-grid">
+          <label class="level-opt">
+            <input type="radio" name="level" value="beginner">
+            <div class="level-box"><div class="lv-icon">🌱</div><div class="lv-name">مبتدی</div><div class="lv-desc">هیچ سابقه‌ای ندارم</div></div>
+          </label>
+          <label class="level-opt">
+            <input type="radio" name="level" value="intermediate">
+            <div class="level-box"><div class="lv-icon">📈</div><div class="lv-name">متوسط</div><div class="lv-desc">اطلاعات پایه دارم</div></div>
+          </label>
+          <label class="level-opt">
+            <input type="radio" name="level" value="advanced">
+            <div class="level-box"><div class="lv-icon">🏆</div><div class="lv-name">پیشرفته</div><div class="lv-desc">تجربه معاملاتی دارم</div></div>
+          </label>
+        </div>
+      </div>
+      <div class="toast err-t" id="errToast">⚠️ لطفاً همه فیلدهای ضروری را کامل کنید.</div>
+      <button type="submit" class="submit-btn" id="submitBtn">ثبت‌نام و ارسال اطلاعات ✈️</button>
+    </form>
+    <div class="success-msg" id="successMsg">
+      <div class="s-icon">🎉</div>
+      <h3>ثبت‌نام شما با موفقیت انجام شد!</h3>
+      <p>اطلاعات شما دریافت شد.<br>کارشناسان راد وست به زودی با شما تماس خواهند گرفت.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FAQ -->
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(245,158,11,.15)">❓</div>
+    <div><h2>سوالات متداول</h2><p>پاسخ سوالات رایج درباره دوره</p></div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>کلاس مناسب چه کسانی است؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">اگر هیچ آشنایی با بازارهای مالی ندارید یا قبلاً آموزش دیده‌اید اما هنوز به سود مستمر نرسیده‌اید، این دوره برای شما مناسب است.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>مدت زمان دوره چقدر است؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><strong style="color:var(--accent3);font-size:15px">⏱️ ۵۰ ساعت آموزش حضوری</strong></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>در این دوره چه مباحثی آموزش داده می‌شود؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><ul><li>✅ آموزش ورود به بازار</li><li>✅ تحلیل تکنیکال</li><li>✅ مدیریت سرمایه</li><li>✅ روانشناسی معاملات</li><li>✅ طراحی استراتژی سودده</li><li>✅ اکسپرت مدیریت سرمایه</li></ul></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>آیا بعد از پایان دوره پشتیبانی وجود دارد؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><strong>بله</strong> — شرکت‌کنندگان از <strong>پشتیبانی دائمی</strong> برخوردار خواهند بود و می‌توانند سوالات خود را پس از پایان کلاس نیز مطرح کنند.<br><span class="tag">پشتیبانی دائمی ♾️</span></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>محل برگزاری کلاس کجاست؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">📍 <strong>پارک علم و فناوری بندرعباس</strong></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>هزینه دوره چقدر است؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">💰 <strong style="font-size:17px;color:var(--gold2)">۳۰ میلیون تومان</strong><br><span class="tag tag-gold">امکان پرداخت اقساطی ✅</span></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>آیا امکان پرداخت اقساطی وجود دارد؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><strong>بله</strong> — هزینه دوره در <strong>دو مرحله</strong> قابل پرداخت است.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>این دوره برای فارکس است یا ارز دیجیتال؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><strong>هر دو بازار</strong> به صورت کامل آموزش داده می‌شوند:<ul style="margin-top:10px"><li>📊 بازار فارکس (Forex)</li><li>🪙 بازار ارزهای دیجیتال (Crypto)</li></ul></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>آیا بعد از دوره می‌توان وارد بازار واقعی شد؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">هدف این دوره <strong>آماده‌سازی کامل</strong> برای فعالیت مستقل در بازارهای مالی است. تمامی مباحث از پایه تا ساخت استراتژی شخصی آموزش داده می‌شود.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>تهیه‌شده توسط <strong>راد وست</strong> — آموزش حرفه‌ای بازارهای مالی</p>
+  <p style="margin-top:6px;font-size:12px">📍 پارک علم و فناوری بندرعباس</p>
+</footer>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwP3UCe23luxS1B2fMMDeaqmcgw9yVqxm_wlUkAbevTN9iP41YWOuNLbGnd02Bz_n0k-A/exec";
+
+function toggleFaq(el){
+  const item=el.parentElement;
+  const open=item.classList.contains("open");
+  document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));
+  if(!open) item.classList.add("open");
+}
+
+async function submitForm(e){
+  e.preventDefault();
+  const name  = document.getElementById("fullname").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const level = document.querySelector("input[name=level]:checked");
+  const errEl = document.getElementById("errToast");
+  const btn   = document.getElementById("submitBtn");
+
+  errEl.style.display="none";
+  document.querySelectorAll(".field input").forEach(i=>i.classList.remove("err"));
+
+  let ok=true;
+  if(!name) {document.getElementById("fullname").classList.add("err");ok=false;}
+  if(!phone){document.getElementById("phone").classList.add("err");ok=false;}
+  if(!level) ok=false;
+  if(!ok){errEl.style.display="block";return;}
+
+  btn.disabled=true;
+  btn.innerHTML="در حال ارسال... <span class=\'spinner\'></span>";
+
+  const levelMap={beginner:"مبتدی",intermediate:"متوسط",advanced:"پیشرفته"};
+  const payload={
+    name, phone, email,
+    level: levelMap[level.value] || level.value,
+    timestamp: new Date().toLocaleString("fa-IR")
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(payload)
+    });
+  } catch(err) {
+    console.error("Send error:", err);
+  }
+
+  setTimeout(()=>{
+    document.getElementById("regForm").style.display="none";
+    document.getElementById("successMsg").style.display="block";
+    document.getElementById("successMsg").scrollIntoView({behavior:"smooth",block:"center"});
+  },600);
+}
+</script>
+</body>
+</html>
